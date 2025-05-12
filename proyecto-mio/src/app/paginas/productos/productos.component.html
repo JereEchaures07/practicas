@@ -41,17 +41,17 @@
 <h1>Productos</h1>
 <div class="card-container">
     <ng-container *ngIf="Productos && Productos.length">
-        <ng-container *ngFor="let producto of Productos">
+        <ng-container *ngFor="let producto of Productos; let i=index">
             <div *ngIf="producto.disponible" class="card">
-                <img [src]="producto.imagen" alt="{{producto.nombre}}" class="producto.imagen">
-                <h2>{{producto.nombre}}</h2>
-                <h2>{{producto.descripcion}}</h2>
+                <img [src]="producto.imagen" alt="..." class="card-img-top">
+                <h2 class="card-title">{{producto.nombre}}</h2>
+                <h2 class="card-text">{{producto.descripcion}}</h2>
                 <h2>Precio: {{producto.precio}}</h2>
-                <!-- From Uiverse.io by BHARGAVPATEL1244 -->
-                <button> <span>Agregar al carrito</span>
+                <!-- From Uiverse.io by adamgiebl -->
+                <button (click)="agregar(producto)"> Agregar al carro
                 </button>
-
-            </div>
+                <button (click)="agregar"></button>
+                </div>
         </ng-container>
     </ng-container>
 </div>

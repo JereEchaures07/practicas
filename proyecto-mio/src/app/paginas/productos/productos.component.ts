@@ -1,12 +1,13 @@
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { Producto } from '../../model/producto.model';
 import { CarritoService } from '../../servicio/carrito.service';
+import { FavoritosComponent } from '../../favoritos/favoritos.component';
 
 @Component({
   selector: 'app-producto',
-  imports: [FormsModule, NgFor, CommonModule],
+  imports: [FormsModule, NgFor, CommonModule, NgIf],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
@@ -50,13 +51,20 @@ export class ProductosComponent {
     },
 
   ]
-  constructor(private carritoService: CarritoService) { }
+  constructor(private carritoService: CarritoService, private favoritosservice: FavoritosComponent) {
+
+  }
   // Metodo para agregar un producto
 
   agregar(producto: Producto) {
     this.carritoService.agregarAlcarrito(producto)
     alert('producto agregado al carrito')
   }
+  agregarfav(producto: Producto) {
+    this.favoritosservice.agregarfavorito(producto)
+    alert('producto agregado a favoritos')
+  }
+
 }
 
 
