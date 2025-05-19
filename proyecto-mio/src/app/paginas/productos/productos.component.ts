@@ -1,9 +1,9 @@
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Producto } from '../../model/producto.model';
 import { CarritoService } from '../../servicio/carrito.service';
-import { FavoritosComponent } from '../../favoritos/favoritos.component';
+import { FavoritosService } from '../../servicio/favoritos.service';
 
 @Component({
   selector: 'app-producto',
@@ -36,7 +36,7 @@ export class ProductosComponent {
     {
       id: 1,
       nombre: 'iphone 16',
-      descripcion: '',
+      descripcion: '.',
       precio: 24000,
       imagen: 'https://www.1p.sg/cdn/shop/files/iPhone-16-Black_1cebd178-ed7b-4386-983e-e3aca356bd31.jpg?v=1728668203&width=1445',
       disponible: true,
@@ -44,14 +44,23 @@ export class ProductosComponent {
     {
       id: 2,
       nombre: 'iphone 15 pro max',
-      descripcion: '',
+      descripcion: '.',
       precio: 20000,
       imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh5bhIS8u-u8BeZPMDi0NnxgzLacyrDteu7A&s',
       disponible: true,
     },
+    {
+      id: 2,
+      nombre: 'iphone 14 pro',
+      descripcion: '.',
+      precio: 20000,
+      imagen: 'https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-gold-220907-geo_inline.jpg.large.jpg',
+      disponible: true,
+    },
+
 
   ]
-  constructor(private carritoService: CarritoService, private favoritosservice: FavoritosComponent) {
+  constructor(private carritoService: CarritoService, private favoritosservice: FavoritosService) {
 
   }
   // Metodo para agregar un producto
@@ -60,8 +69,8 @@ export class ProductosComponent {
     this.carritoService.agregarAlcarrito(producto)
     alert('producto agregado al carrito')
   }
-  agregarfav(producto: Producto) {
-    this.favoritosservice.agregarfavorito(producto)
+  agregarAfavorito(Producto: Producto) {
+    this.favoritosservice.agregarfavoritos(Producto)
     alert('producto agregado a favoritos')
   }
 

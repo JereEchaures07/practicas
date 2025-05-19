@@ -1,14 +1,16 @@
 import { Component,OnInit } from '@angular/core';
-import { Producto } from '../model/producto.model';
+import { Producto } from '../../model/producto.model';
 
-import { FavoritosService } from '../servicio/favoritos.service';
+import { FavoritosService } from '../../servicio/favoritos.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-favoritos',
-  imports: [],
+  imports: [CommonModule,FormsModule],
   templateUrl: './favoritos.component.html',
   styleUrl: './favoritos.component.css'
 })
-export class FavoritosComponent {
+export class FavoritosComponent implements OnInit{
   productosEnFavorito: { producto: Producto; cantidad: number }[] = []
 
   constructor(private favoritosservice: FavoritosService) { }
@@ -18,7 +20,7 @@ export class FavoritosComponent {
       this.productosEnFavorito = producto
     })
   }
-  agregarCantidad(index: number) {
+  agregarfavoritos(index: number) {
     this.productosEnFavorito[index].cantidad++
   }
 
@@ -28,15 +30,15 @@ export class FavoritosComponent {
     }
   }
   
-  eliminarProducto(productoId:number){
+  eliminarDeFavoritos(productoId:number){
     this.favoritosservice.eliminarDeFavoritos(productoId)
   }
 
   vaciarFavorito(){
-    this.favoritosservice.favoritosCarrito()
+    this.favoritosservice.VaciarFavorito()
   }
  
-  realizarCompra(){
+  agregarfavorito(){
     alert('compra Realizada')
     this.vaciarFavorito()
   }

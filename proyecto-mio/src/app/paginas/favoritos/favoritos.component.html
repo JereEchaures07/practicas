@@ -1,6 +1,6 @@
-<h1>Carrito de compras</h1>
-<div *ngIf="productosEncarrito.length === 0">
-    <p>No hay productos en el Carrito</p>
+<h1>Favoritos</h1>
+<div *ngIf=" productosEnFavorito.length === 0">
+    <p>No hay productos en favoritos</p>
 </div>
 
 <table class="table">
@@ -15,20 +15,21 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of productosEncarrito; let i = index">
-            <td><img [src]="item.producto.imagen"></td>
+        <tr *ngFor="let item of  productosEnFavorito; let i = index">
+            <td><img [src]="item.producto.imagen"></td>  
             <td>{{item.producto.nombre}}</td>
             <td>{{item.producto.descripcion}}</td>
-            <td>{{item.producto.precio | currency }}</td>
+            <td>{{item.producto.precio}}</td>
             <td>
                 <button (click)="quitarCantidad(i)">-</button>
                 {{item.cantidad}}
-                <button (click)="agregarCantidad(i)">+</button>
+                <button (click)="agregarfavoritos(i)">+</button>
             </td>
+
             <td>
-                <button (click)="eliminarProducto (item.producto.id)">eliminar</button>
+                <button (click)="eliminarDeFavoritos (item.producto.id)">eliminar</button>
             </td>
         </tr>
     </tbody>
 </table>
-<button (click)="realizarCompra()" class="btm btn-success">Realizar Compra</button>
+<button (click)="agregarfavorito()" class="btm btn-success">Agregar favorito</button>

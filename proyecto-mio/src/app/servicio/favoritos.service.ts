@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ProductosComponent } from '../paginas/productos/productos.component';
 import { Producto } from '../model/producto.model';
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritosService {
-private favoritossubject = new BehaviorSubject<{ producto: Producto; cantidad: number }[]>([])
+  private favoritossubject = new BehaviorSubject<{ producto: Producto; cantidad: number }[]>([])
   favoritos$ = this.favoritossubject.asObservable();
-  agregarAlcarrito(producto: Producto) {
+  agregarfavoritos(producto: Producto) {
     const productos = this.favoritossubject.getValue();
     const encontrado = productos.find(p => p.producto.id === producto.id)
     if (encontrado) {
@@ -21,10 +20,10 @@ private favoritossubject = new BehaviorSubject<{ producto: Producto; cantidad: n
     const productos = this.favoritossubject.getValue().filter(p => p.producto.id !== productoId)
     this.favoritossubject.next(productos)
   }
-  VaciarFavoritos() {
+  VaciarFavorito() {
     this.favoritossubject.next([])
   }
-  constructor() { 
+  constructor() {
 
   }
 }
