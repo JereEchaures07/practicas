@@ -15,5 +15,5 @@ export const routes: Routes = [
     { path: 'ofertas', component: OfertasComponent },
     { path: 'carrito', component: CarritoComponent },
     { path: 'quienes somos', component: QuienessomosComponent },
-    {path: 'favoritos',component:FavoritosComponent}
+    {path: 'favoritos',component:FavoritosComponent},
 ];

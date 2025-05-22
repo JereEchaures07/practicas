@@ -1,103 +1,131 @@
-/* estilo general  */
-body {
-  background-color: black;
-  color: white;
-  font-family: Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 
-/* contenedor de la tarjeta  */
-.card-container {
-  display: flex;
-  justify-content: center;
-  /* central horizontalmente  */
-  gap: 60px;
-  /* espacio tarjeta */
-  flex-wrap: wrap;
-  /* permite que se acomode a la pantalla */
+body {
+  background-color: #000;
+  color: #ccffcc;
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
   padding: 20px;
 }
 
-/* tarjeta estilo  */
-.card {
-  width: 18rem;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0 6px 10px rgba(255, 255, 255, 0, 1)
+.titulo-principal {
+  font-size: 2.5rem;
+  color: #00ff99;
+  text-shadow: 0 0 10px #00ff99;
 }
 
-/* efecto de la tarjeta  */
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0, 2)
+/* Contenedor de tarjetas */
+.card-container-matrix {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
 }
 
-/*imagen dentro de la tarjeta */
-.card img {
+/* Tarjeta estilo Matrix */
+.card-matrix {
+  background: linear-gradient(145deg, #0a0a0a, #111);
+  border: 1px solid #00ff66;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.2);
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+}
+
+.card-matrix:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #00ff66;
+}
+
+/* Imagen del producto */
+.card-img {
   width: 100%;
-  height: 100%;
+  height: 180px;
   object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00ff66;
+  margin-bottom: 12px;
 }
 
-/* boton estilo */
-.card .btn {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  border: none;
-  transition: background 0.3s ease-in-out;
+/* Info del producto */
+.card-info .nombre {
+  font-size: 1.2rem;
+  color: #00ff99;
+  margin-bottom: 8px;
 }
 
-/*efecto de las tarjetas*/
-
-.card .btn:hover {
-  background-color: rgb(169, 245, 245);
+.card-info .descripcion {
+  font-size: 0.9rem;
+  color: #aaffcc;
+  margin-bottom: 12px;
 }
 
-/* From Uiverse.io by adamgiebl */
+.card-info .precio {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #00ff66;
+  margin-bottom: 16px;
+}
+
+/* Botones */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 button {
-  --green: #1BFD9C;
-  font-size: 15px;
-  padding: 0.7em 2.7em;
-  letter-spacing: 0.06em;
-  position: relative;
-  font-family: inherit;
-  border-radius: 0.6em;
-  overflow: hidden;
-  transition: all 0.3s;
-  line-height: 1.4em;
-  border: 2px solid var(--green);
-  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
-  color: var(--green);
-  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+  background-color: #00ff66;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ff66;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  color: #82ffc9;
-  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+  background-color: #1aff80;
+  box-shadow: 0 0 15px #1aff80;
+  transform: scale(1.05);
 }
 
-button:before {
-  content: "";
-  position: absolute;
-  left: -4em;
-  width: 4em;
-  height: 100%;
-  top: 0;
-  transition: transform .4s ease-in-out;
-  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
+.filtro-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
-button:hover:before {
-  transform: translateX(15em);
+.filtro-input {
+  padding: 10px 14px;
+  border: 2px solid #00ff66;
+  border-radius: 10px;
+  background-color: #111;
+  color: #ccffcc;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  width: 200px;
+  transition: border-color 0.3s ease;
 }
 
-/*al momento de achicar las pantallas se acomodan las columnas*/
-
-@media (max-width:600px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
+.filtro-input:focus {
+  border-color: #1aff80;
+  box-shadow: 0 0 10px #1aff80;
 }
+
+.productos-container {
+  background: linear-gradient(135deg, #000000, #111111, #222222);
+  min-height: 100vh; /* Para que ocupe todo el alto de la pantalla */
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+

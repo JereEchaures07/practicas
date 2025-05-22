@@ -1,68 +1,49 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <i class="fa-solid fa-house"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="bg-black bg-gradient-to-r from-black via-zinc-900 to-black text-green-400 p-4 shadow-md shadow-green-700 sticky top-0 z-50">
+  <div class="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-4">
+    
+    <!-- Logo -->
+    <a class="text-2xl font-bold flex items-center gap-2 hover:text-green-300 transition-all duration-300" href="#">
+      <i class="fa-solid fa-house"></i>
+      MATRIXSHOP
+    </a>
+
+    <!-- Toggle (móvil) -->
+    <button class="lg:hidden text-green-400 focus:outline-none absolute top-5 right-5">
+      <i class="fa-solid fa-bars text-2xl"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/productos"> <i class="fa-solid fa-mobile"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contacto">Contacto <i class="fa-sharp-duotone fa-regular fa-circle-user"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/ofertas">Ofertas <i class="fa-solid fa-tags"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/quienes somos">Acerca de nosotros <i class="fa-solid fa-info"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-        </li>
-        <li>
-          <a [routerLink]="['/carrito']"></a>
-          <i class="bi bi-cart"></i>
-          <span *ngIf="cantidadProductos > 0">
-            ({{cantidadProductos}})
-          </span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/favoritos"><i class="fa-solid fa-star"></i></a>
-        </li>
-        <li>
-          <a [routerLink]="['/favoritos']"></a>
-          <i class="bi bi-cart"></i>
-          <span *ngIf="cantidadProductos > 0">
-            ({{cantidadProductos}})
-          </span>
-        </li>
-      </ul>
 
-      <!-- From Uiverse.io by boryanakrasteva -->
-      <div class="input-container">
-        <input type="text" name="text" class="input" placeholder="search...">
-        <span class="icon">
-          <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round"></path>
-              <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round"></path>
-              <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000"
-                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </g>
-          </svg>
+    <!-- Links -->
+    <div class="flex flex-wrap justify-center items-center gap-6 font-medium mt-2 lg:mt-0">
+      <a class="hover:text-green-300 transition-all" routerLink="/productos">
+        <i class="fa-solid fa-mobile-screen-button"></i> Productos
+      </a>
+      <a class="hover:text-green-300 transition-all" routerLink="/contacto">
+        <i class="fa-regular fa-circle-user"></i> Contacto
+      </a>
+      <a class="hover:text-green-300 transition-all" routerLink="/ofertas">
+        <i class="fa-solid fa-tags"></i> Ofertas
+      </a>
+      <a class="hover:text-green-300 transition-all" routerLink="/quienes somos">
+        <i class="fa-solid fa-info-circle"></i> Nosotros
+      </a>
+
+      <!-- Carrito -->
+      <a class="hover:text-green-300 transition-all relative" routerLink="/carrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span *ngIf="cantidadProductos > 0" class="absolute -top-2 -right-3 bg-green-500 text-black text-xs px-1 rounded-full">
+          {{cantidadProductos}}
         </span>
+      </a>
+
+      <!-- Favoritos -->
+      <a class="hover:text-green-300 transition-all relative" routerLink="/favoritos">
+        <i class="fa-solid fa-star"></i>
+      </a>
+
+      <!-- Buscador sin ícono -->
+      <div class="w-64">
+        <input type="text" placeholder="Buscar en Matrix..." class="w-full bg-zinc-800 border border-green-500 rounded-full px-4 py-2 text-sm text-green-300 placeholder-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all">
       </div>
-
-
     </div>
   </div>
 </nav>

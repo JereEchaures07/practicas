@@ -37,21 +37,31 @@
         </div>
     </div>
 </div>-->
+<div class="productos-container py-5">
+  <h2 class="titulo-principal text-center mb-4">🛒 Nuestros Productos</h2>
 
-<h1>Productos</h1>
-<div class="card-container">
-    <ng-container *ngIf="Productos && Productos.length">
-        <ng-container *ngFor="let producto of Productos; let i=index">
-            <div *ngIf="producto.disponible" class="card">
-                <img [src]="producto.imagen" alt="..." class="card-img-top">
-                <h2 class="card-title">{{producto.nombre}}</h2>
-                <h2 class="card-text">{{producto.descripcion}}</h2>
-                <h2>Precio: {{producto.precio}}</h2>
-                <!-- From Uiverse.io by adamgiebl -->
-                <button (click)="agregar(producto)"> Agregar al carro
-                </button>
-                <button (click)="agregarAfavorito(producto)">Agregar a favoritos</button>
-                </div>
-        </ng-container>
+  <!-- Filtros -->
+  <div class="filtro-container">
+    <input type="text" placeholder="Buscar por nombre..." [(ngModel)]="busqueda" class="filtro-input">
+    <input type="number" placeholder="Precio mínimo" [(ngModel)]="precioMin" class="filtro-input">
+    <input type="number" placeholder="Precio máximo" [(ngModel)]="precioMax" class="filtro-input">
+  </div>
+
+  <!-- Lista de productos filtrados -->
+  <div class="card-container-matrix">
+    <ng-container *ngFor="let producto of productosFiltrados()">
+      <div *ngIf="producto.disponible" class="card-matrix">
+        <img [src]="producto.imagen" alt="Imagen de {{ producto.nombre }}" class="card-img">
+        <div class="card-info">
+          <div class="nombre">{{ producto.nombre }}</div>
+          <div class="descripcion">{{ producto.descripcion }}</div>
+          <div class="precio">Precio: {{ producto.precio | currency: 'ARS':'symbol':'1.2-2' }}</div>
+        </div>
+        <div class="btn-group">
+          <button (click)="agregar(producto)">Agregar al carro</button>
+          <button (click)="agregarAfavorito(producto)">Agregar a favoritos</button>
+        </div>
+      </div>
     </ng-container>
+  </div>
 </div>
