@@ -1,35 +1,39 @@
-<h1>Favoritos</h1>
-<div *ngIf=" productosEnFavorito.length === 0">
-    <p>No hay productos en favoritos</p>
+<h1>favoritos</h1>
+
+<div *ngIf="productosEnFavorito.length === 0">
+  <p>No hay productos en el carrito</p>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of  productosEnFavorito; let i = index">
-            <td><img [src]="item.producto.imagen"></td>  
-            <td>{{item.producto.nombre}}</td>
-            <td>{{item.producto.descripcion}}</td>
-            <td>{{item.producto.precio}}</td>
-            <td>
-                <button (click)="quitarCantidad(i)">-</button>
-                {{item.cantidad}}
-                <button (click)="agregarfavoritos(i)">+</button>
-            </td>
-
-            <td>
-                <button (click)="eliminarDeFavoritos (item.producto.id)">eliminar</button>
-            </td>
-        </tr>
-    </tbody>
+<table class="matrix-table" *ngIf="productosEnFavorito.length > 0">
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productosEnFavorito; let i = index">
+      <td><img [src]="item.producto.imagen" alt="producto" /></td>
+      <td>{{ item.producto.nombre }}</td>
+      <td>{{ item.producto.descripcion }}</td>
+      <td>{{ item.producto.precio | currency: 'ARS':'symbol' }}</td>
+      <td>
+        <button (click)=" quitarCantidad(i)">-</button>
+        {{ item.cantidad }}
+        <button (click)="agregarfavoritos(i)">+</button>
+      </td>
+      <td>
+        <button (click)=" eliminarDeFavoritos(item.producto.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
-<button (click)="agregarfavorito()" class="btm btn-success">Agregar favorito</button>
+
+<button class="btn-matrix-comprar" (click)=" agregarfavorito()">
+   <span>Agregar a favoritos</span>
+  <div class="matrix-glow"></div>
+</button>

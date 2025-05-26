@@ -1,34 +1,39 @@
-<h1>Carrito de compras</h1>
+<h1>🛒 Carrito de compras</h1>
+
 <div *ngIf="productosEncarrito.length === 0">
-    <p>No hay productos en el Carrito</p>
+  <p>No hay productos en el carrito</p>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of productosEncarrito; let i = index">
-            <td><img [src]="item.producto.imagen"></td>
-            <td>{{item.producto.nombre}}</td>
-            <td>{{item.producto.descripcion}}</td>
-            <td>{{item.producto.precio | currency }}</td>
-            <td>
-                <button (click)="quitarCantidad(i)">-</button>
-                {{item.cantidad}}
-                <button (click)="agregarCantidad(i)">+</button>
-            </td>
-            <td>
-                <button (click)="eliminarProducto (item.producto.id)">eliminar</button>
-            </td>
-        </tr>
-    </tbody>
+<table class="matrix-table" *ngIf="productosEncarrito.length > 0">
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productosEncarrito; let i = index">
+      <td><img [src]="item.producto.imagen" alt="producto" /></td>
+      <td>{{ item.producto.nombre }}</td>
+      <td>{{ item.producto.descripcion }}</td>
+      <td>{{ item.producto.precio | currency: 'ARS':'symbol' }}</td>
+      <td>
+        <button (click)="quitarCantidad(i)">-</button>
+        {{ item.cantidad }}
+        <button (click)="agregarCantidad(i)">+</button>
+      </td>
+      <td>
+        <button (click)="eliminarProducto(item.producto.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
-<button (click)="realizarCompra()" class="btm btn-success">Realizar Compra</button>
+
+<button class="btn-matrix-comprar" (click)="realizarCompra()">
+  🛒 <span>Realizar Compra</span>
+  <div class="matrix-glow"></div>
+</button>
