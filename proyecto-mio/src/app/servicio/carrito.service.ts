@@ -26,5 +26,30 @@ export class CarritoService {
     this.carritosubject.next([])
   }
 
+  // Metodo para actualizar la cantidad de un producto en el carrito
+  actualizarCantidad(productoId: number, nuevaCantidad: number) {
+    // Recorremos el carrito y actualizamos la cantidad del producto con el ID dado
+    const Productos = this.carritosubject.getValue().map(item => {
+      if (item.producto.id === productoId) {
+        // retomamos una copia del producto con la nueva cantidad
+        return { ...item, cantidad: nuevaCantidad }
+      }
+      return item
+    })
+    // emitimoes el nuevo estado del carrito
+    this.carritosubject.next(Productos)
+  }
+  // metodo para obtener los productos del carrito como un arreglo 
+  obtenerProductos(): {producto:Producto;cantidad:number}[]{
+    return this.carritosubject.getValue();
+  }
+
+  // metodo para calcular el total a pagar (precio * cantidad de cada producto)
+  obtenerTotal():number{
+    const productos = this.carritosubject.getValue();
+    // Usamos reduce para sumar los subtotales de cada producto
+    return productos.reduce((total, item)=> total + item.producto.precio * item.cantidad,0)
+  }
+
   constructor() { }
 }

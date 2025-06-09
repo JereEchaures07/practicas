@@ -33,7 +33,15 @@
   </tbody>
 </table>
 
-<button class="btn-matrix-comprar" (click)="realizarCompra()">
+<!-- <button class="btn-matrix-comprar" (click)="realizarCompra()">
   🛒 <span>Realizar Compra</span>
   <div class="matrix-glow"></div>
-</button>
+</button>-->
+
+<div class="text-end mt-4" *ngIf = "productosEncarrito.length > 0"  >
+ <h4 class="fu-bold">total: {{calcularTotal()}}</h4>
+ <button class="btn btn-primary mt-2" (click)="irAFormularioCompra()" >
+   <i class="bi bi- cart-check"></i> Realizar Compra
+ </button>
+
+</div>

@@ -1,6 +1,7 @@
-<nav class="bg-black bg-gradient-to-r from-black via-zinc-900 to-black text-green-400 p-4 shadow-md shadow-green-700 sticky top-0 z-50">
+<nav
+  class="bg-black bg-gradient-to-r from-black via-zinc-900 to-black text-green-400 p-4 shadow-md shadow-green-700 sticky top-0 z-50">
   <div class="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-4">
-    
+
     <!-- Logo -->
     <a class="text-2xl font-bold flex items-center gap-2 hover:text-green-300 transition-all duration-300" href="#">
       <i class="fa-solid fa-house"></i>
@@ -30,7 +31,8 @@
       <!-- Carrito -->
       <a class="hover:text-green-300 transition-all relative" routerLink="/carrito">
         <i class="fa-solid fa-cart-shopping"></i>
-        <span *ngIf="cantidadProductos > 0" class="absolute -top-2 -right-3 bg-green-500 text-black text-xs px-1 rounded-full">
+        <span *ngIf="cantidadProductos > 0"
+          class="absolute -top-2 -right-3 bg-green-500 text-black text-xs px-1 rounded-full">
           {{cantidadProductos}}
         </span>
       </a>
@@ -40,9 +42,16 @@
         <i class="fa-solid fa-star"></i>
       </a>
 
+      <!-- compra -->
+      <a class="hover:text-green-300 transition-all relative" routerLink="/compras">
+        compras
+      </a>
+
+
       <!-- Buscador sin ícono -->
       <div class="w-64">
-        <input type="text" placeholder="Buscar en Matrix..." class="w-full bg-zinc-800 border border-green-500 rounded-full px-4 py-2 text-sm text-green-300 placeholder-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all">
+        <input type="text" placeholder="Buscar en Matrix..."
+          class="w-full bg-zinc-800 border border-green-500 rounded-full px-4 py-2 text-sm text-green-300 placeholder-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all">
       </div>
     </div>
   </div>
