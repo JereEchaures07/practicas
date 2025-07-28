@@ -1,0 +1,113 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #000000, #0a0a0a);
+  font-family: 'Share Tech Mono', monospace;
+  color: #0f0;
+}
+
+/* Centra el formulario */
+.matrix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Caja del formulario */
+.matrix-box {
+  background-color: #111;
+  padding: 40px;
+  border-radius: 10px;
+  border: 2px solid #0f0;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Título */
+.matrix-box h2 {
+  text-align: center;
+  color: #00ff00;
+  margin-bottom: 30px;
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+}
+
+/* Formulario */
+.matrix-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inputs */
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #0f0;
+  color: #0f0;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #00ff00;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+/* Botones */
+.matrix-btn {
+  padding: 10px;
+  background-color: #00ff00;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.matrix-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Botones sociales */
+.apple-btn {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.google-btn {
+  background-color: #db4437;
+  color: #fff;
+  border: none;
+}
+
+.google-btn:hover {
+  background-color: #c1351d;
+}
+
+/* Texto adicional */
+.or-text {
+  text-align: center;
+  color: #0f0;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-text a {
+  color: #00ff00;
+  text-decoration: underline;
+}

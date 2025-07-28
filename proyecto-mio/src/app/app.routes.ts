@@ -7,6 +7,10 @@ import { QuienessomosComponent } from './paginas/quienessomos/quienessomos.compo
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { FavoritosComponent } from './paginas/favoritos/favoritos.component';
 import { ComprasComponent } from './paginas/compras/compras.component';
+import { RegistroComponent } from './paginas/registro/registro.component';
+import { InicioSesionComponent } from './paginas/inicio-sesion/inicio-sesion.component';
+
+
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,5 +21,7 @@ export const routes: Routes = [
     { path: 'carrito', component: CarritoComponent },
     { path: 'quienes somos', component: QuienessomosComponent },
     {path: 'favoritos',component:FavoritosComponent},
-    {path: 'compras', component: ComprasComponent}
+    {path: 'compra',component:ComprasComponent},   
+    {path: 'registro',component:RegistroComponent},
+    {path: 'inicio sesion', component: InicioSesionComponent}
 ];

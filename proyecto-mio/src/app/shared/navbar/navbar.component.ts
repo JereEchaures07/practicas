@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
-import { CarritoService } from '../../servicio/carrito.service'; 
+import { CarritoService } from '../../servicio/carrito.service';
 import { Producto } from '../../model/producto.model';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, CommonModule, RouterModule,FormsModule],
+  imports: [RouterLink, CommonModule, RouterModule, FormsModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']  // ← CORREGIDO aquí (en plural)
 })
 export class NavbarComponent implements OnInit {
   cantidadProductos: number = 0
@@ -21,8 +21,22 @@ export class NavbarComponent implements OnInit {
     }
     )
   }
-  onCarritoClick(){
+  onCarritoClick() {
     console.log('carrito clicked')
   }
 
+  cambiarFondo() {
+    let toggle: HTMLInputElement | null = document.getElementById('toggle') as HTMLInputElement
+    let label_toggle: HTMLInputElement | null = document.getElementById('toggle') as HTMLInputElement
+    if (toggle) {
+      let checked: boolean = toggle.checked;
+      document.body.classList.toggle('dark', checked)
+      if (checked) {
+        label_toggle!.innerHTML = '<i class="fa-solid fa-sun"></i>'
+      } else {
+        label_toggle!.innerHTML = '<i class="fa-solid fa-moon"></i>'
+
+      }
+    }
+  }
 }

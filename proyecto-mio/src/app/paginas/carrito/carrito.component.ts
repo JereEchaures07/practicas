@@ -24,7 +24,7 @@ export class CarritoComponent implements OnInit {
   agregarCantidad(index: number) {
     this.productosEncarrito[index].cantidad++
   }
-
+          
   quitarCantidad(index: number) {
     if (this.productosEncarrito[index].cantidad > 1) {
       this.productosEncarrito[index].cantidad--
