@@ -9,7 +9,7 @@ import { FavoritosService } from '../../servicio/favoritos.service';
   selector: 'app-producto',
   imports: [FormsModule, NgFor, CommonModule, NgIf],
   templateUrl: './productos.component.html',
-  styleUrl: './productos.component.css'
+  styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent {
   /*
@@ -154,6 +154,7 @@ export class ProductosComponent {
       return coincideNombre && coincideMin && coincideMax;
     });
   }
+  
 
 }
 

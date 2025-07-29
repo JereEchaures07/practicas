@@ -166,3 +166,20 @@ p {
   background-color: #1aff80;
   transform: scale(1.1);
 }
+/* Contenedor general promo y pago */
+.promo-pago-container {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+/* Títulos */
+.promo-pago-container h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+

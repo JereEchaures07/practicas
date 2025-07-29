@@ -1,50 +1,77 @@
-<section class="ofertas-section py-5">
+<!-- 🔥 CINTA DE OFERTAS - ARRIBA DE TODO 🔥 -->
+<div class="cinta-ofertas-full">
+  <div class="cinta-track">
+    <div class="cinta-item">💥 IPhone 16 con IA integrada - 20% OFF 💥</div>
+    <div class="cinta-item">🚀 IPhone 14 desde $949.999 🚀</div>
+    <div class="cinta-item">🔋 IPhone 13 Pro Max – Batería eterna 🔋</div>
+    <div class="cinta-item">⚡ Accesorios con hasta 50% OFF ⚡</div>
+    <div class="cinta-item">🧠 SmartDeals: Tecnología con propósito 🧠</div>
+  </div>
+</div>
+
+<!-- SECCIÓN DE OFERTAS -->
+<section class="ofertas-section">
   <div class="container">
-    <h2 class="text-center mb-5 text-green-400 fw-bold fs-1">🔥 Ofertas Especiales 🔥</h2>
-    <div class="row g-4">
-      
+    <h2 class="titulo-matrix-glow text-center mb-4">🔥 Ofertas Especiales del Sistema 🔥</h2>
+
+    <!-- Temporizador -->
+    <div class="contador-oferta text-center mb-4">
+      ⏳ Oferta termina en: <span id="oferta-timer">05:00</span>
+    </div>
+
+    <div class="ofertas-container">
       <!-- Oferta 1 -->
-      <div class="col-md-4">
-        <div class="oferta-card">
-          <img src="https://i.blogs.es/a57a3e/iphone-16-analisis-10/375_375.webp" alt="Producto en oferta">
-          <div class="oferta-info">
-            <h5 class="nombre">IPhone 16</h5>
-            <p class="descripcion">Rendimiento extremo, cámaras de otro nivel.</p>
-            <p class="precio-original">$1.999.999</p>
-            <p class="precio-oferta">$1.599.999</p>
-            <button class="btn-comprar">Comprar</button>
-          </div>
+      <div class="oferta-card">
+        <img src="https://i.blogs.es/a57a3e/iphone-16-analisis-10/375_375.webp" alt="IPhone 16">
+        <div class="oferta-info">
+          <div class="nombre">IPhone 16</div>
+          <div class="descripcion">Rendimiento extremo, cámaras de otro nivel.</div>
+          <div class="precio-original">$1.999.999</div>
+          <div class="precio-oferta">$1.599.999</div>
+          <button class="btn-comprar">Comprar</button>
         </div>
       </div>
 
       <!-- Oferta 2 -->
-      <div class="col-md-4">
-        <div class="oferta-card">
-          <img src="https://i.blogs.es/718a10/img_2085/500_333.jpeg" alt="Producto en oferta">
-          <div class="oferta-info">
-            <h5 class="nombre">Iphone 13 pro max</h5>
-            <p class="descripcion">Pantalla fluida, batería que rinde todo el día.</p>
-            <p class="precio-original">$1.150.000</p>
-            <p class="precio-oferta">$999.999</p>
-            <button class="btn-comprar">Comprar</button>
-          </div>
+      <div class="oferta-card">
+        <img src="https://i.blogs.es/718a10/img_2085/500_333.jpeg" alt="IPhone 13 Pro Max">
+        <div class="oferta-info">
+          <div class="nombre">IPhone 13 Pro Max</div>
+          <div class="descripcion">Pantalla fluida, batería que rinde todo el día.</div>
+          <div class="precio-original">$1.150.000</div>
+          <div class="precio-oferta">$999.999</div>
+          <button class="btn-comprar">Comprar</button>
         </div>
       </div>
 
       <!-- Oferta 3 -->
-      <div class="col-md-4">
-        <div class="oferta-card">
-          <img src="https://i.blogs.es/2dbead/iphone-14-00-03/450_1000.jpg" alt="Producto en oferta">
-          <div class="oferta-info">
-            <h5 class="nombre">IPhone 14</h5>
-            <p class="descripcion">Un clásico con superprecio.</p>
-            <p class="precio-original">$1.199.999</p>
-            <p class="precio-oferta">$949.999</p>
-            <button class="btn-comprar">Comprar</button>
-          </div>
+      <div class="oferta-card">
+        <img src="https://i.blogs.es/2dbead/iphone-14-00-03/450_1000.jpg" alt="IPhone 14">
+        <div class="oferta-info">
+          <div class="nombre">IPhone 14</div>
+          <div class="descripcion">Un clásico con superprecio.</div>
+          <div class="precio-original">$1.199.999</div>
+          <div class="precio-oferta">$949.999</div>
+          <button class="btn-comprar">Comprar</button>
         </div>
       </div>
-
     </div>
   </div>
 </section>
+
+<!-- 🔁 Temporizador Script -->
+<script>
+  let duration = 5 * 60;
+  const timerDisplay = document.getElementById("oferta-timer");
+
+  const countdown = setInterval(() => {
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+    timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds
+      .toString()
+      .padStart(2, '0')}`;
+    duration--;
+
+    if (duration < 0) clearInterval(countdown);
+  }, 1000);
+</script>
