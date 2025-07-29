@@ -1,4 +1,4 @@
-<div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel">
+<!-- <div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://cdn.mos.cms.futurecdn.net/trm75uuPZ7TyhfYCiZBhF6.jpg" class="d-block w-100 carousel-img" alt="Imagen 1">
@@ -23,7 +23,7 @@
 
 
 
-<!-- Tarjetas de productos 
+Tarjetas de productos 
 <div class="card-container-matrix">
   <ng-container *ngIf="Productos && Productos.length">
     <ng-container *ngFor="let producto of Productos; let i=index">
@@ -42,3 +42,15 @@
     </ng-container>
   </ng-container>
 </div>-->
+
+<div class="carousel-container">
+  <div class="carousel-slide">
+
+    <img src="https://www.apple.com/v/iphone/compare/ai/images/meta/compare__0kr7oqqwknma_og.png?202506181442=" alt="Foto 2" />
+    <img src="https://media.es.wired.com/photos/650a4438e4633e8b818c09b9/16:9/w_1600,c_limit/Apple-Watch-S9-carbon-neutral-lineup-230912.jpg" alt="">
+    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-mini-finish-unselect-gallery-1-202410_FMT_WHH?wid=2560&hei=1440&fmt=jpeg&qlt=90&.v=1727219498681" alt="">
+  </div>
+
+  <button class="prev" (click)="prevSlide()">&#10094;</button>
+  <button class="next" (click)="nextSlide()">&#10095;</button>
+</div>

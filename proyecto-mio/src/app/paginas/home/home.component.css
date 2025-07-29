@@ -1,39 +1,48 @@
-
-
-/* Carousel más ancho, sin bordes verdes */
-#carouselExample {
-  width: 100%;
-  margin: 40px auto;
-  border-radius: 0;
+.carousel-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  box-shadow: none;
+  margin: 0;
+  padding: 0 40px;  /* Margen lateral para dar espacio */
+  box-sizing: border-box;
 }
 
-/* Imágenes del carrusel sin bordes ni sombra verde */
-.carousel-img {
-  width: 80px;
-  height: 500px;
-  object-fit: cover;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  display: block;
+.carousel-slide {
+  display: flex;
+  gap: 40px;            /* Espacio entre imágenes */
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  align-items: center;  /* Centrar verticalmente las imágenes */
 }
 
-/* Flechas sin bordes ni efectos verdes */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.4); /* fondo suave para visibilidad */
+.carousel-slide img {
+  flex-shrink: 0;
+  width: calc(100vw - 80px); /* Ancho pantalla menos el espacio entre imágenes */
+  height: 90vh;              /* Altura un poco menor para que no pegue arriba y abajo */
+  object-fit: contain;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 32px;
   border-radius: 50%;
-  padding: 12px;
-  filter: none !important;
-  box-shadow: none !important;
-  border: none !important;
+  cursor: pointer;
+  z-index: 10;
 }
 
-/* Eliminar posibles estilos heredados de .card-img */
-.card-container-matrix img,
-.card-img {
-  box-shadow: none !important;
-  border: none !important;
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
 }

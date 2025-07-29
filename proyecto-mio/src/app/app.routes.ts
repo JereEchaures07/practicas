@@ -23,5 +23,5 @@ export const routes: Routes = [
     {path: 'favoritos',component:FavoritosComponent},
     {path: 'compra',component:ComprasComponent},   
     {path: 'registro',component:RegistroComponent},
-    {path: 'inicio sesion', component: InicioSesionComponent}
+    {path: 'inicio sesion', component: InicioSesionComponent},
 ];

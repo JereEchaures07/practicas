@@ -55,9 +55,28 @@ export class HomeComponent {
   }
  */
 
-  
+  currentIndex = 0;
 
+  prevSlide() {
+    const slides = document.querySelectorAll<HTMLImageElement>('.carousel-slide img');
+    this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : slides.length - 1;
+    this.updateSlidePosition();
+  }
+
+  nextSlide() {
+    const slides = document.querySelectorAll<HTMLImageElement>('.carousel-slide img');
+    this.currentIndex = (this.currentIndex < slides.length - 1) ? this.currentIndex + 1 : 0;
+    this.updateSlidePosition();
+  }
+
+  updateSlidePosition() {
+    const slide = document.querySelector<HTMLElement>('.carousel-slide');
+    if (slide) {
+      slide.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+    }
+  }
 }
+
 
 
 
