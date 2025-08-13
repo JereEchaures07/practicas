@@ -44,7 +44,7 @@ export class ProductosComponent {
     },
     {
       id: 2,
-      nombre: 'iPhone 15 Pro Max',
+      nombre: 'IPhone 15 Pro Max',
       descripcion: 'Diseño en titanio, chip A17 Pro, cámara de 48 MP.',
       precio: 1500000,
       imagen: 'https://ipoint.com.ar/26645-large_default/iphone-15-pro-max-256gb.jpg',

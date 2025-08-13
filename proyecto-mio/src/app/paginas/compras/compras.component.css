@@ -1,120 +1,178 @@
-/* === MATRIXSHOP.CSS === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 
-/* Fuente estilo Matrix */
-body {
-  font-family: 'Share Tech Mono', monospace;
-  background-color: #000;
-  color: #00ff88;
-  background-image: radial-gradient(ellipse at center, #001f1f 0%, #000 100%);
-  background-size: cover;
-  background-attachment: fixed;
+/* === Contenedor principal === */
+.matrix-container {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+  font-family: 'Orbitron', sans-serif;
+  color: #ccffcc;
 }
 
-/* Títulos */
-h1, h2, h3 {
-  color: #00ff88;
-  text-shadow: 0 0 4px #00ff88;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+/* === Formulario Matrix === */
+.matrix-form {
+  width: 100%;
+  max-width: 700px;
+  background: #111;
+  border: 2px solid #00ff66;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 40px #00ff66;
 }
 
-/* Etiquetas */
-label.form-label {
-  color: #a0f7c1;
+/* Título */
+.matrix-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #00ff66;
+  text-shadow: 0 0 12px #00ff66;
+  margin-bottom: 30px;
 }
 
-/* Inputs */
-.form-control,
-.form-select {
-  background-color: #011d1d;
-  border: 1px solid #00ff88;
-  color: #00ff88;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+/* Campos */
+.matrix-field { margin-bottom: 20px; }
+.matrix-field label { display: block; font-weight: 600; color: #00ff66; margin-bottom: 8px; }
+.matrix-field label span { color: red; }
+
+/* Inputs y selects estilo Neon */
+.matrix-input-group input,
+.matrix-col input,
+.matrix-form input,
+.matrix-form select {
+  background: #000 !important;
+  color: #ccffcc !important;  /* texto verde */
+  border: 1px solid #00ff66 !important;
+  border-radius: 12px !important;
+  padding: 10px !important;
+  outline: none !important;
+  box-shadow: 0 0 10px rgba(0,255,100,0.3);
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+  vertical-align: middle; /* asegura alineación */
 }
 
-.form-control::placeholder {
-  color: #00ff88a0;
+/* Placeholder uniforme para todos los inputs y selects */
+.matrix-input-group input::placeholder,
+.matrix-col input::placeholder,
+.matrix-form input::placeholder,
+.matrix-form select option {
+  color: #66ff99 !important;
+  opacity: 1 !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.2;
 }
 
-.form-control:focus,
-.form-select:focus {
-  border-color: #1affb2;
-  box-shadow: 0 0 10px #00ff88;
-  background-color: #021c1c;
-  color: #00ff88;
-}
-
-/* Input group icons */
-.input-group-text {
-  background-color: #002f2f;
-  border: 1px solid #00ff88;
-  color: #00ff88;
-}
-
-/* Text danger */
-.text-danger {
-  color: #ff4f4f !important;
-}
-
-/* Botón principal */
-.btn-primary {
-  background-color: #00ff88;
-  border-color: #00ff88;
+/* Iconos (opcional si se usan dentro del input) */
+.matrix-input-group .matrix-icon {
+  background: #00ff66;
   color: #000;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* Filas y columnas */
+.matrix-row { display: flex; gap: 15px; }
+.matrix-col { flex: 1; }
+
+/* Errores */
+.matrix-error { color: red; font-size: 0.9rem; margin-top: 5px; }
+
+/* Resumen y botón */
+.matrix-summary {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #66ff99;
+  text-shadow: 0 0 8px #00ff66;
+}
+
+.btn-matrix-comprar {
+  position: relative;
+  background: #00ff66;
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.btn-matrix-comprar span { position: relative; z-index: 1; }
+.btn-matrix-comprar .matrix-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
+}
+@keyframes shine { 0% { left: -100%; } 50% { left: 100%; } 100% { left: 100%; } }
+.btn-matrix-comprar:hover { background: #1aff80; box-shadow: 0 0 25px #00ff66; }
+
+/* Botón secundario */
+.matrix-btn-secondary {
+  background: transparent;
+  color: #00ff66;
+  border: 2px solid #00ff66;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,255,100,0.4);
+  transition: all 0.3s ease;
+}
+.matrix-btn-secondary:hover { background: rgba(0,255,100,0.1); box-shadow: 0 0 25px #00ff66; }
+
+/* === Modal PDF === */
+.matrix-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
 }
 
-.btn-primary:hover {
-  background-color: #00cc70;
-  transform: scale(1.05);
+.matrix-modal {
+  background: #111;
+  border: 2px solid #00ff66;
+  border-radius: 20px;
+  box-shadow: 0 0 40px #00ff66;
+  width: 90%;
+  max-width: 1000px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-/* Modal estilo */
-.modal-content {
-  background-color: #000;
-  color: #00ff88;
-  border: 2px solid #00ff88;
+.matrix-modal-header, .matrix-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #000;
+  border-bottom: 1px solid #00ff66;
 }
 
-.modal-header,
-.modal-footer {
-  border-color: #00ff88;
+.matrix-modal-title { font-size: 1.5rem; color: #00ff66; text-shadow: 0 0 8px #00ff66; margin: 0; }
+.matrix-modal-close {
+  background: none; border: none; color: #00ff66; font-size: 1.4rem;
+  cursor: pointer; text-shadow: 0 0 8px #00ff66; transition: transform 0.2s ease;
 }
+.matrix-modal-close:hover { transform: scale(1.2); color: #1aff80; }
 
-.btn-success {
-  background-color: #00ff88;
-  border-color: #00ff88;
-  color: #000;
-}
-
-.btn-success:hover {
-  background-color: #00cc70;
-}
-
-/* Transición para errores */
-.form-text.text-danger {
-  font-style: italic;
-  font-size: 0.9rem;
-  animation: blink 1.5s infinite;
-}
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
-  }
-}
-
-/* Responsive ajustes extra */
-@media (max-width: 576px) {
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  .btn-primary {
-    width: 100%;
-  }
-}
+.matrix-modal-body { flex: 1; background: #000; }
+.matrix-modal-body iframe { width: 100%; height: 100%; border: none; }
