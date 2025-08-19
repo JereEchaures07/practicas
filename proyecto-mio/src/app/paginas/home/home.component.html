@@ -1,64 +1,126 @@
-<!-- <div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://cdn.mos.cms.futurecdn.net/trm75uuPZ7TyhfYCiZBhF6.jpg" class="d-block w-100 carousel-img" alt="Imagen 1">
+<!-- 🔥 CINTA DE OFERTAS - ARRIBA DE TODO 🔥 -->
+<div class="cinta-ofertas-full">
+  <div class="cinta-track">
+    <div class="cinta-item">💥 IPhone 16 con IA integrada - 20% OFF 💥</div>
+    <div class="cinta-item">🚀 IPhone 14 desde $949.999 🚀</div>
+    <div class="cinta-item">🔋 IPhone 13 Pro Max – Batería eterna 🔋</div>
+    <div class="cinta-item">⚡ Accesorios con hasta 50% OFF ⚡</div>
+    <div class="cinta-item">🧠 SmartDeals: Tecnología con propósito 🧠</div>
+  </div>
+</div>
+
+<!-- 🎥 CAROUSEL -->
+<div class="carousel-container">
+  <div class="carousel-slide">
+    <img src="https://www.apple.com/v/iphone/compare/ai/images/meta/compare__0kr7oqqwknma_og.png" alt="Foto 1" />
+    <img src="https://media.es.wired.com/photos/650a4438e4633e8b818c09b9/16:9/w_1600,c_limit/Apple-Watch-S9-carbon-neutral-lineup-230912.jpg" alt="Foto 2" />
+    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-mini-finish-unselect-gallery-1-202410_FMT_WHH?wid=2560&hei=1440" alt="Foto 3" />
+  </div>  
+  <button class="prev" (click)="prevSlide()">&#10094;</button>
+  <button class="next" (click)="nextSlide()">&#10095;</button>
+</div>  
+
+<div class="productos-seccion">
+  <!-- 🎯 DESTACADOS -->
+  <h2 class="titulo-principal">🚀 Destacados</h2>
+  <div class="card-container-matrix">
+    <div class="card-matrix">
+      <img src="https://cdn.mos.cms.futurecdn.net/trm75uuPZ7TyhfYCiZBhF6.jpg" class="card-img">
+      <div class="card-info">
+        <h2 class="nombre">iPhone 16 Pro</h2>
+        <p class="descripcion">El futuro en tus manos con IA integrada.</p>
+        <p class="precio">$1.299.999</p>
+        <div class="btn-group">
+          <button>Agregar al carrito</button>
+          <button>Favoritos</button>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="https://i.blogs.es/718a10/img_2085/500_333.jpeg" class="d-block w-100 carousel-img" alt="Imagen 2">
+
+    <div class="card-matrix">
+      <img src="https://i.blogs.es/2dbead/iphone-14-00-03/450_1000.jpg" class="card-img">
+      <div class="card-info">
+        <h2 class="nombre">iPhone 14</h2>
+        <p class="descripcion">Potencia y diseño que nunca pasan de moda.</p>
+        <p class="precio">$949.999</p>
+        <div class="btn-group">
+          <button>Agregar al carrito</button>
+          <button>Favoritos</button>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="https://i.blogs.es/2dbead/iphone-14-00-03/450_1000.jpg" class="d-block w-100 carousel-img" alt="Imagen 3">
+
+    <div class="card-matrix">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_786304-MLA74919627702_032024-O.webp">
+      <div class="card-info">
+        <h2 class="nombre">MacBook Air M3</h2>
+        <p class="descripcion">Ligero, veloz y ahora con chip M3.</p>
+        <p class="precio">$2.099.999</p>
+        <div class="btn-group">
+          <button>Agregar al carrito</button>
+          <button>Favoritos</button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Anterior</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Siguiente</span>
-  </button>
-</div>
-
-
-
-Tarjetas de productos 
-<div class="card-container-matrix">
-  <ng-container *ngIf="Productos && Productos.length">
-    <ng-container *ngFor="let producto of Productos; let i=index">
-      <div *ngIf="producto.disponible" class="card-matrix">
-        <img [src]="producto.imagen" alt="Imagen de {{producto.nombre}}" class="card-img">
-        <div class="card-info">
-          <h2 class="nombre">{{producto.nombre}}</h2>
-          <p class="descripcion">{{producto.descripcion}}</p>
-          <p class="precio">Precio: {{ producto.precio | currency:'ARS':'symbol':'1.2-2' }}</p>
-          <div class="btn-group">
-            <button (click)="agregar(producto)">Agregar al carro</button>
-            <button (click)="agregarAfavorito(producto)">Agregar a favoritos</button>
-          </div>
+  <!-- 🎧 ACCESORIOS -->
+  <h2 class="titulo-principal">🎧 Accesorios</h2>
+  <div class="card-container-matrix">
+    <div class="card-matrix">
+      <img src="https://www.apple.com/newsroom/images/product/airpods/standard/Apple-AirPods-Pro-2nd-gen-hero-230912_big.jpg.large.jpg" class="card-img">
+      <div class="card-info">
+        <h2 class="nombre">AirPods Pro 2</h2>
+        <p class="descripcion">Cancelación activa de ruido.</p>
+        <p class="precio">$289.999</p>
+        <div class="btn-group">
+          <button>Agregar al carrito</button>
+          <button>Favoritos</button>
         </div>
       </div>
-    </ng-container>
-  </ng-container>
-</div>-->
+    </div>
 
+    <div class="card-matrix">
+      <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MNWP3_AV1?wid=1144&hei=1144&fmt=jpeg&qlt=90" class="card-img">
+      <div class="card-info">
+        <h2 class="nombre">Cargador MagSafe</h2>
+        <p class="descripcion">Carga rápida y sin cables.</p>
+        <p class="precio">$59.999</p>
+        <div class="btn-group">
+          <button>Agregar al carrito</button>
+          <button>Favoritos</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- 💡 INNOVACIONES -->
+  <h2 class="titulo-principal">💡 Innovaciones Apple</h2>
+  <div class="card-container-matrix">
+    <div class="card-matrix">
+            <img src="https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2024/01/08/17047403446414.jpg">
 
+      <div class="card-info">
+        <h2 class="nombre">Apple Vision Pro</h2>
+        <p class="descripcion">La realidad aumentada nunca fue tan real.</p>
+        <p class="precio">$5.499.999</p>
+        <div class="btn-group">
+          <button>Agregar al carrito</button>
+          <button>Favoritos</button>
+        </div>
+      </div>
+    </div>
 
-<div class="carousel-container">
-  <div class="carousel-slide">
-
-    <img src="https://www.apple.com/v/iphone/compare/ai/images/meta/compare__0kr7oqqwknma_og.png?202506181442="
-      alt="Foto 2" />
-    <img
-      src="https://media.es.wired.com/photos/650a4438e4633e8b818c09b9/16:9/w_1600,c_limit/Apple-Watch-S9-carbon-neutral-lineup-230912.jpg"
-      alt="">
-    <img
-      src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-mini-finish-unselect-gallery-1-202410_FMT_WHH?wid=2560&hei=1440&fmt=jpeg&qlt=90&.v=1727219498681"
-      alt="">
-  </div>  
-
-  <button class="prev" (click)="prevSlide()">&#10094;</button>
-  <button class="next" (click)="nextSlide()">&#10095;</button>
+    <div class="card-matrix">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7ft42MtQPDJvsF3mzNzFPVTj9wHtEjIfVpg&s" class="card-img">
+      <div class="card-info">
+        <h2 class="nombre">iOS 18 con IA</h2>
+        <p class="descripcion">Un sistema operativo que piensa por vos.</p>
+        <p class="precio">Incluido en nuevos dispositivos</p>
+        <div class="btn-group">
+          <button>Descubrir más</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

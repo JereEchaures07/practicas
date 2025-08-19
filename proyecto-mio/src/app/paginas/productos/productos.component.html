@@ -39,6 +39,7 @@
 </div>-->
 
 <div class="productos-container py-5">
+
   <h2 class="titulo-principal text-center mb-4">🛒 Nuestros Productos</h2>
 
   <!-- Filtros -->
@@ -54,7 +55,6 @@
       <div *ngIf="producto.disponible" class="card-matrix">
         <img [src]="producto.imagen" alt="Imagen de {{ producto.nombre }}" class="card-img">
         <div class="card-info">
-          
           <div class="nombre">{{ producto.nombre }}</div>
           <div class="descripcion">{{ producto.descripcion }}</div>
           <div class="precio">Precio: {{ producto.precio | currency: 'ARS':'symbol':'1.2-2' }}</div>
@@ -66,8 +66,4 @@
       </div>
     </ng-container>
   </div>
-
-
-
-
 </div>

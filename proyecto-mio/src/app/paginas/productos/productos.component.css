@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Fira+Code:wght@400;700&display=swap');
 
 body {
   background-color: #000;
-  color: #ccffcc;
+  color: #cceedd;
   font-family: 'Orbitron', sans-serif;
   margin: 0;
   padding: 20px;
@@ -10,8 +10,9 @@ body {
 
 .titulo-principal {
   font-size: 2.5rem;
-  color: #00ff99;
-  text-shadow: 0 0 10px #00ff99;
+  color: #55cc88; /* Verde suave */
+  text-shadow: 0 0 4px #33cc66, 0 0 8px #33cc66;
+  text-align: center;
 }
 
 /* Contenedor de tarjetas */
@@ -26,17 +27,19 @@ body {
 /* Tarjeta estilo Matrix */
 .card-matrix {
   background: linear-gradient(145deg, #0a0a0a, #111);
-  border: 1px solid #00ff66;
+  border: 1px solid #33cc66;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 255, 100, 0.2);
+  box-shadow: 0 0 8px rgba(51, 204, 102, 0.25);
   padding: 16px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 300px;
+  text-align: center;                 /* Centra el texto */
+  font-family: 'Fira Code', monospace; /* Fuente tech elegante */
 }
 
 .card-matrix:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 25px #00ff66;
+  box-shadow: 0 0 12px #55cc88;
 }
 
 /* Imagen del producto */
@@ -45,27 +48,27 @@ body {
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 0 10px #00ff66;
+  box-shadow: 0 0 4px #33cc66;
   margin-bottom: 12px;
 }
 
 /* Info del producto */
 .card-info .nombre {
   font-size: 1.2rem;
-  color: #00ff99;
+  color: #55cc88;
   margin-bottom: 8px;
 }
 
 .card-info .descripcion {
   font-size: 0.9rem;
-  color: #aaffcc;
+  color: #88ccaa;
   margin-bottom: 12px;
 }
 
 .card-info .precio {
   font-size: 1rem;
   font-weight: bold;
-  color: #00ff66;
+  color: #33cc66;
   margin-bottom: 16px;
 }
 
@@ -74,10 +77,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: center; /* Centra los botones */
 }
 
 button {
-  background-color: #00ff66;
+  background-color: #33cc66;
   color: #000;
   border: none;
   border-radius: 10px;
@@ -86,16 +90,18 @@ button {
   font-size: 0.85rem;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 0 10px #00ff66;
+  box-shadow: 0 0 4px #33cc66;
   transition: all 0.3s ease;
+  font-family: 'Fira Code', monospace;
 }
 
 button:hover {
-  background-color: #1aff80;
-  box-shadow: 0 0 15px #1aff80;
+  background-color: #55cc88;
+  box-shadow: 0 0 10px #55cc88;
   transform: scale(1.05);
 }
 
+/* Filtros */
 .filtro-container {
   display: flex;
   justify-content: center;
@@ -106,28 +112,27 @@ button:hover {
 
 .filtro-input {
   padding: 10px 14px;
-  border: 2px solid #00ff66;
+  border: 2px solid #33cc66;
   border-radius: 10px;
   background-color: #111;
-  color: #ccffcc;
-  font-family: 'Orbitron', sans-serif;
+  color: #cceedd;
+  font-family: 'Fira Code', monospace;
   font-size: 0.95rem;
   outline: none;
   width: 200px;
-  transition: border-color 0.3s ease;
+  text-align: center; /* Centra el texto dentro del input */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .filtro-input:focus {
-  border-color: #1aff80;
-  box-shadow: 0 0 10px #1aff80;
+  border-color: #55cc88;
+  box-shadow: 0 0 5px #55cc88;
 }
 
+/* Contenedor general */
 .productos-container {
   background: linear-gradient(135deg, #000000, #111111, #222222);
-  min-height: 100vh; /* Para que ocupe todo el alto de la pantalla */
+  min-height: 100vh;
   padding: 40px 20px;
   box-sizing: border-box;
 }
-
-
-

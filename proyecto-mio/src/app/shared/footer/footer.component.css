@@ -1,9 +1,9 @@
 .footer-matrix {
   background-color: #000;
-  color: #00FF66;
+  color: #66ff99; /* Verde unificado */
   font-family: 'Orbitron', sans-serif;
   font-size: 0.9rem;
-  border-top: 1px solid #00FF66;
+  border-top: 1px solid #66ff99;
   padding: 30px 20px;
 }
 
@@ -26,20 +26,22 @@
 }
 
 .footer-icon {
-  color: #00FF66;
+  color: #66ff99; /* Verde unificado */
   font-size: 1.5rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .footer-icon:hover {
-  color: #1aff80;
-  text-shadow: 0 0 8px #1aff80;
+  color: #4dff88; /* Verde glow al pasar el cursor */
+  text-shadow: 0 0 8px #66ff99;
 }
 
 .footer-copy {
   text-align: center;
+  color: #66ff99;
 }
 
+/* Responsive */
 @media (max-width: 600px) {
   .footer-content {
     padding: 0 10px;

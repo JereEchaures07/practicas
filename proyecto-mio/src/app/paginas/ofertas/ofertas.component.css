@@ -1,6 +1,6 @@
 .ofertas-section {
   background: linear-gradient(135deg, #000000, #111111, #222222);
-  color: #ccffcc;
+  color: #cceedd; /* texto suave */
   padding: 40px 20px;
   font-family: 'Orbitron', sans-serif;
 }
@@ -12,21 +12,22 @@
   gap: 24px;
 }
 
-/* Tarjeta estilo Matrix para ofertas */
+/* Tarjeta estilo Matrix unificado con productos */
 .oferta-card {
   background: linear-gradient(145deg, #0a0a0a, #111);
-  border: 1px solid #00ff66;
+  border: 2px solid #33cc66; /* verde principal */
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 255, 100, 0.2);
+  box-shadow: 0 0 20px rgba(51, 204, 102, 0.2); /* glow tenue */
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   max-width: 300px;
   width: 100%;
 }
 
 .oferta-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 25px #00ff66;
+  box-shadow: 0 0 25px #55cc88; /* glow al hover */
+  border-color: #55cc88;
 }
 
 .oferta-card img {
@@ -34,7 +35,7 @@
   height: 200px;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
-  box-shadow: 0 0 10px #00ff66;
+  box-shadow: 0 0 10px #55cc88; /* glow suave */
 }
 
 /* Contenido de la tarjeta */
@@ -44,7 +45,7 @@
 
 .oferta-info .nombre {
   font-size: 1.2rem;
-  color: #00ff99;
+  color: #33cc66; /* verde principal */
   margin-bottom: 8px;
 }
 
@@ -61,7 +62,7 @@
 }
 
 .precio-oferta {
-  color: #00ff88;
+  color: #33cc66;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 12px;
@@ -69,7 +70,7 @@
 
 /* Botón */
 .btn-comprar {
-  background-color: #00ff66;
+  background-color: #33cc66;
   color: #000;
   border: none;
   padding: 10px;
@@ -78,37 +79,41 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 0 10px #00ff66;
+  box-shadow: 0 0 10px #33cc66;
   transition: all 0.3s ease;
   width: 100%;
   text-align: center;
 }
 
 .btn-comprar:hover {
-  background-color: #1aff80;
-  box-shadow: 0 0 15px #1aff80;
-  color: #fff;
+  background-color: #55cc88;
+  box-shadow: 0 0 15px #55cc88;
+  color: #000;
   transform: scale(1.05);
 }
+
+/* Título con glow unificado */
 .titulo-matrix-glow {
   font-size: 2.8rem;
-  color: #00ff99;
+  color: #33cc66;
   font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+  text-shadow: 0 0 10px #33cc66, 0 0 20px #55cc88;
   animation: flicker 2s infinite alternate;
 }
 
 @keyframes flicker {
-  0% { opacity: 0.9; text-shadow: 0 0 6px #00ff99; }
-  50% { opacity: 1; text-shadow: 0 0 20px #00ff99; }
-  100% { opacity: 0.85; text-shadow: 0 0 10px #00ff99; }
+  0% { opacity: 0.9; text-shadow: 0 0 6px #33cc66; }
+  50% { opacity: 1; text-shadow: 0 0 20px #55cc88; }
+  100% { opacity: 0.85; text-shadow: 0 0 10px #33cc66; }
 }
+
+/* Cinta de ofertas */
 .cinta-ofertas-full {
   width: 100vw;
   overflow: hidden;
   background-color: #0d0d0d;
-  border-top: 1px solid #00ff66;
-  border-bottom: 1px solid #00ff66;
+  border-top: 2px solid #33cc66;
+  border-bottom: 2px solid #33cc66;
   padding: 12px 0;
   position: relative;
   z-index: 10;
@@ -121,17 +126,16 @@
 }
 
 .cinta-item {
-  color: #00ff66;
+  color: #33cc66;
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   font-size: 1rem;
   padding: 0 60px;
   white-space: nowrap;
-  text-shadow: 0 0 10px #00ff66;
+  text-shadow: 0 0 10px #55cc88;
 }
 
 @keyframes cintaScroll {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
-
